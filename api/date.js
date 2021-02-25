@@ -4,7 +4,11 @@
 // };
 
 module.exports = (req, res) => {
-  const dateHours = new Date().toString();
+  const dateHours = {
+    test1: 01,
+    test2: 02,
+    test3: 03
+  }
   res.status(200).send(dateHours);
 };
 
