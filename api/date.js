@@ -2,11 +2,7 @@
 //   const date = new Date().toString();
 //   res.status(200).send(date);
 // };
-
 module.exports = (req, res) => {
-
-  console.log(req.body)
-  //Habilita o cors no vercel
   res.setHeader('Access-Control-Allow-Credentials', true)
   res.setHeader('Access-Control-Allow-Origin', '*')
   // another common pattern
@@ -16,24 +12,14 @@ module.exports = (req, res) => {
     'Access-Control-Allow-Headers',
     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
   )
+  const dateHours = {
 
-  // const { hourIn, minIn, hourOut, minOut, del } = req.body
-
-  // const reqBody = req.body
-  // let valueHourIn = parseInt(hourIn);
-  // let valueMinIn = parseInt(minIn);
-  // let valueHourOut = parseInt(hourOut);
-  // let valueMinOut = parseInt(minOut);
-
-
-  // const dateHours = [{
-  //   valueHourDiurno: valueHourIn,
-  //   valueMinDiurno: valueMinIn,
-  //   DiurnoResult: 'Diurno',
-  //   valueHourNoturno: 'Noturno',
-  //   valueMinNoturno: valueHourOut,
-  //   NoturnoResult: valueMinOut
-  // }]
-  res.status(200).send(reqBody);
+    valueHourDiurno: 01,
+    valueMinDiurno: 02,
+    DiurnoResult: 'Diurno',
+    valueHourNoturno: 04,
+    valueMinNoturno: 05,
+    NoturnoResult: 'Noturno'
+  }
+  res.status(200).send(dateHours);
 };
-
