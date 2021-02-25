@@ -6,7 +6,7 @@
 module.exports = (req, res) => {
 
   console.log(req.body)
-  //Habilita o cora no vercel
+  //Habilita o cors no vercel
   res.setHeader('Access-Control-Allow-Credentials', true)
   res.setHeader('Access-Control-Allow-Origin', '*')
   // another common pattern
@@ -34,6 +34,6 @@ module.exports = (req, res) => {
     valueMinNoturno: valueHourOut,
     NoturnoResult: valueMinOut
   }]
-  res.status(200).send();
+  res.status(200).send(reqBody);
 };
 
