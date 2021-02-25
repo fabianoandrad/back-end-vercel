@@ -34,6 +34,6 @@ module.exports = (req, res) => {
     valueMinNoturno: valueHourOut,
     NoturnoResult: valueMinOut
   }]
-  res.status(200).send(reqBody);
+  res.status(200).send();
 };
 
