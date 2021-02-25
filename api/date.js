@@ -5,6 +5,7 @@
 
 module.exports = (req, res) => {
 
+  console.log(req.body)
   //Habilita o cora no vercel
   res.setHeader('Access-Control-Allow-Credentials', true)
   res.setHeader('Access-Control-Allow-Origin', '*')
