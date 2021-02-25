@@ -14,9 +14,12 @@ module.exports = (req, res) => {
     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
   )
   const dateHours = {
-    test1: 01,
-    test2: 02,
-    test3: 03
+    valueHourDiurno: 01,
+    valueMinDiurno: 02,
+    DiurnoResult: 03,
+    valueHourNoturno: 04,
+    valueMinNoturno: 05,
+    NoturnoResult: 03
   }
   res.status(200).send(dateHours);
 };
