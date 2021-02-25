@@ -6,6 +6,7 @@
     const res = await fetch("/api/date");
     const newDate = await res.text();
     date = newDate;
+    console.log(date);
   });
 </script>
 
