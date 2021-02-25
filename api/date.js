@@ -2,6 +2,8 @@
 //   const date = new Date().toString();
 //   res.status(200).send(date);
 // };
+
+
 module.exports = (req, res) => {
   res.setHeader('Access-Control-Allow-Credentials', true)
   res.setHeader('Access-Control-Allow-Origin', '*')
