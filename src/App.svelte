@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   import { onMount } from "svelte";
   //export let date;
 
@@ -12,7 +12,7 @@
 
 <main>
   <h1>Svelte + Node.js API</h1>
-  <!-- <h2>
+  <h2>
     Deployed with
     <a href="https://vercel.com/docs" target="_blank" rel="noreferrer noopener">
       Vercel
@@ -45,5 +45,5 @@
   </p>
   <br />
   <h2>The date according to Node.js is:</h2>
-  <p>{date}</p> -->
-</main>
+  <p>{date}</p>
+</main> -->
