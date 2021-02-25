@@ -17,23 +17,23 @@ module.exports = (req, res) => {
     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
   )
 
-  const { hourIn, minIn, hourOut, minOut, del } = req.body
+  // const { hourIn, minIn, hourOut, minOut, del } = req.body
 
-  const reqBody = req.body
-  let valueHourIn = parseInt(hourIn);
-  let valueMinIn = parseInt(minIn);
-  let valueHourOut = parseInt(hourOut);
-  let valueMinOut = parseInt(minOut);
+  // const reqBody = req.body
+  // let valueHourIn = parseInt(hourIn);
+  // let valueMinIn = parseInt(minIn);
+  // let valueHourOut = parseInt(hourOut);
+  // let valueMinOut = parseInt(minOut);
 
 
-  const dateHours = [{
-    valueHourDiurno: valueHourIn,
-    valueMinDiurno: valueMinIn,
-    DiurnoResult: 'Diurno',
-    valueHourNoturno: 'Noturno',
-    valueMinNoturno: valueHourOut,
-    NoturnoResult: valueMinOut
-  }]
+  // const dateHours = [{
+  //   valueHourDiurno: valueHourIn,
+  //   valueMinDiurno: valueMinIn,
+  //   DiurnoResult: 'Diurno',
+  //   valueHourNoturno: 'Noturno',
+  //   valueMinNoturno: valueHourOut,
+  //   NoturnoResult: valueMinOut
+  // }]
   res.status(200).send(reqBody);
 };
 
