@@ -13,14 +13,14 @@ module.exports = (req, res) => {
     'Access-Control-Allow-Headers',
     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
   )
-  const dateHours = {
+  const dateHours = [{
     valueHourDiurno: 01,
     valueMinDiurno: 02,
     DiurnoResult: 03,
     valueHourNoturno: 04,
     valueMinNoturno: 05,
     NoturnoResult: 03
-  }
+  }]
   res.status(200).send(dateHours);
 };
 
