@@ -14,6 +14,11 @@ module.exports = (req, res) => {
     'Access-Control-Allow-Headers',
     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
   )
+
+  const { body } = req
+
+  const value = body
+
   const dateHours = [{
 
     valueHourDiurno: 01,
@@ -23,5 +28,5 @@ module.exports = (req, res) => {
     valueMinNoturno: 05,
     NoturnoResult: 'Noturno'
   }]
-  res.status(200).send(dateHours);
+  res.status(200).send(value);
 };
