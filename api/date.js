@@ -18,6 +18,8 @@ module.exports = (req, res) => {
   )
 
   const { hourIn, minIn, hourOut, minOut, del } = req.body
+
+  const reqBody = req.body
   let valueHourIn = parseInt(hourIn);
   let valueMinIn = parseInt(minIn);
   let valueHourOut = parseInt(hourOut);
@@ -32,6 +34,6 @@ module.exports = (req, res) => {
     valueMinNoturno: valueHourOut,
     NoturnoResult: valueMinOut
   }]
-  res.status(200).send(dateHours);
+  res.status(200).send(reqBody);
 };
 
