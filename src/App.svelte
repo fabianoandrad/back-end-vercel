@@ -3,10 +3,10 @@
   export let date;
 
   onMount(async () => {
-    const res = await fetch("/api/date");
-    const newDate = await res.text();
-    date = newDate;
-    console.log(date);
+    // const res = await fetch("/api/date");
+    // const newDate = await res.text();
+    // date = newDate;
+    // console.log(date);
   });
 </script>
 
