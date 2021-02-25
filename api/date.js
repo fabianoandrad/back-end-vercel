@@ -21,12 +21,12 @@ module.exports = (req, res) => {
 
   const dateHours = [{
 
-    valueHourDiurno: 01,
+    valueHourDiurno: value,
     valueMinDiurno: 02,
     DiurnoResult: 'Diurno',
     valueHourNoturno: 04,
     valueMinNoturno: 05,
     NoturnoResult: 'Noturno'
   }]
-  res.status(200).send(value);
+  res.status(200).send(dateHours);
 };
