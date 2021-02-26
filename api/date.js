@@ -32,6 +32,18 @@ app.get("/api/date", (req, res) => {
 
   res.status(200).send(dateHours);
 })
+
+
+app.post("/api/date", (req, res)=>{
+
+const values = []
+  values = req.body;
+
+  
+
+  res.status(200).send(values)
+})
+
  module.exports = app
 
 
