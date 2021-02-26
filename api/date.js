@@ -18,14 +18,14 @@ module.exports = (req, res) => {
   //const {hourIn, minIn, hourOut, minOut, del} = req.body
 
   res.json({
-    body: req.body,
+    //body: req.body,
     query: req.query,
     cookies: req.cookies,
   })
   
   const dateHours = [{
 
-    valueHourDiurno: body,
+    valueHourDiurno: 1,
     valueMinDiurno: query,
     DiurnoResult: 'Diurno',
     valueHourNoturno: cookies,
