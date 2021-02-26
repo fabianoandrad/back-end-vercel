@@ -7,7 +7,7 @@ const cors = require('cors');
 
 
 module.exports = (req, res) => {
-  cors()
+  
   // res.setHeader('Access-Control-Allow-Credentials', true)
   // res.setHeader('Access-Control-Allow-Origin', '*')
   // // another common pattern
@@ -20,12 +20,8 @@ module.exports = (req, res) => {
 
   //const {hourIn, minIn, hourOut, minOut, del} = req.body
 
-  res.json({
-    body: req.body,
-    query: req.query,
-    cookies: req.cookies,
-  })
-
+  
+  
   const dateHours = [{
 
     valueHourDiurno: body,
@@ -66,9 +62,9 @@ module.exports = (req, res) => {
 //         query: req.query,
 //         cookies: req.cookies,
 //       })
-
+      
 //       const dateHours = [{
-
+    
 //         valueHourDiurno: body,
 //         valueMinDiurno: query,
 //         DiurnoResult: 'Diurno',
