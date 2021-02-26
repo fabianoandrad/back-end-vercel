@@ -19,7 +19,7 @@ app.get("/api/date", (req, res) => {
     valueMinNoturno: 05,
     NoturnoResult: 03
   }]
-
+  console.log("passei pelo GET")
   res.status(200).send(dateHours);
 })
 
@@ -28,7 +28,7 @@ app.post("/api/date", (req, res)=>{
 
 const values = []
   values = req.body;
-console.log("passei aqui")
+console.log("passei pelo POST")
   
 return res.json(values)
   //res.status(200).send(values)
