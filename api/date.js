@@ -24,8 +24,6 @@ module.exports = (req, res) => {
 
  
 
-  values.cors()
-
   const dateHours = [{
     valueHourDiurno: 01,
     valueMinDiurno: 02,
