@@ -8,20 +8,20 @@ const cors = require('cors')
 
 app.use(cors())
 
-// app.get("/api/date", (req, res) => {
+app.get("/api/date", (req, res) => {
 
 
-//   const dateHours = [{
-//     valueHourDiurno: 01,
-//     valueMinDiurno: 02,
-//     DiurnoResult: 03,
-//     valueHourNoturno: 04,
-//     valueMinNoturno: 05,
-//     NoturnoResult: 03
-//   }]
+  const dateHours = [{
+    valueHourDiurno: 01,
+    valueMinDiurno: 02,
+    DiurnoResult: 03,
+    valueHourNoturno: 04,
+    valueMinNoturno: 05,
+    NoturnoResult: 03
+  }]
 
-//   res.status(200).send(dateHours);
-// })
+  res.status(200).send(dateHours);
+})
 
 
 app.post("/api/date", (req, res)=>{
