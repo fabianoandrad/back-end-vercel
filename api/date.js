@@ -40,8 +40,8 @@ const values = []
   values = req.body;
 
   
-
-  res.status(200).send(values)
+return res.json(values)
+  //res.status(200).send(values)
 })
 
  module.exports = app
