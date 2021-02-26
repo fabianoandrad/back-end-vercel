@@ -27,7 +27,7 @@ app.get("/api/date", (req, res) => {
     NoturnoResult: "Noturno"
   }
   console.log("passei pelo GET")
-  res.status(200).send(dateHours);
+  //res.status(200).send(dateHours);
 })
 
 
