@@ -24,6 +24,8 @@ module.exports = (req, res) => {
 
   const values = query.data; 
 
+  values.cors()
+
   const dateHours = [{
     valueHourDiurno: 01,
     valueMinDiurno: 02,
