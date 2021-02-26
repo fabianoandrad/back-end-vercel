@@ -15,14 +15,20 @@ module.exports = (req, res) => {
     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
   )
 
-  const {hourIn, minIn, hourOut, minOut, del} = req.body
+  //const {hourIn, minIn, hourOut, minOut, del} = req.body
+
+  res.json({
+    body: req.body,
+    query: req.query,
+    cookies: req.cookies,
+  })
   
   const dateHours = [{
 
-    valueHourDiurno: hourIn,
-    valueMinDiurno: 02,
+    valueHourDiurno: body,
+    valueMinDiurno: query,
     DiurnoResult: 'Diurno',
-    valueHourNoturno: 04,
+    valueHourNoturno: cookies,
     valueMinNoturno: 05,
     NoturnoResult: 'Noturno'
   }]
