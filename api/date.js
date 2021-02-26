@@ -26,9 +26,17 @@ app.post("/api/date", (req, res)=>{
 const values = []
  // values = req.body;
 
+ const dateHours = [{
+  valueHourDiurno: 12,
+  valueMinDiurno: 12,
+  DiurnoResult: "Diurno",
+  valueHourNoturno: 12,
+  valueMinNoturno: 12,
+  NoturnoResult: "Noturno"
+}]
   
 //return res.json(values)
-  //res.status(200)
+  res.status(200).send(dateHours)
 })
 
  module.exports = app
