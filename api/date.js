@@ -38,7 +38,7 @@ app.post("/api/date", (req, res)=>{
 
 const values = []
   values = req.body;
-
+console.log("passei aqui")
   
 return res.json(values)
   //res.status(200).send(values)
