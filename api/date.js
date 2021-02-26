@@ -22,6 +22,8 @@ module.exports = (req, res) => {
     //cookies: req.cookies,
   })
 
+  const { hourIn, minIn, hourOut, minOut, del } = query; 
+
   const dateHours = [{
     valueHourDiurno: 01,
     valueMinDiurno: 02,
