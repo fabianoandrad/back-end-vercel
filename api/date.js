@@ -10,7 +10,9 @@ module.exports = (req, res) => {
   // another common pattern
   // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
   res.setHeader(
-    "Access-Control-Allow-Methods: POST, GET"
+    "Access-Control-Allow-Methods",
+    "GET,OPTIONS,PATCH,DELETE,POST,PUT",
+    "Access-Control-Max-Age: 86400"
   );
   res.setHeader(
     "Access-Control-Allow-Headers",
