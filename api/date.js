@@ -12,12 +12,12 @@ app.get("/api/date", (req, res) => {
 
 
   const dateHours = [{
-    valueHourDiurno: 011,
-    valueMinDiurno: 021,
-    DiurnoResult: 031,
-    valueHourNoturno: 041,
-    valueMinNoturno: 051,
-    NoturnoResult: 031
+    valueHourDiurno: 12,
+    valueMinDiurno: 12,
+    DiurnoResult: 12,
+    valueHourNoturno: 12,
+    valueMinNoturno: 12,
+    NoturnoResult: 12
   }]
   console.log("passei pelo GET")
   res.status(200).send(dateHours);
