@@ -54,6 +54,8 @@ const allowCors = fn => async (req, res) => {
 }
 
 const handler = (req, res) => {
+  res.setHeader('Access-Control-Allow-Credentials', true)
+  res.setHeader('Access-Control-Allow-Origin', '*')
   res.json({
         body: req.body,
         query: req.query,
