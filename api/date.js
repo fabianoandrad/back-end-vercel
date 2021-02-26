@@ -22,7 +22,7 @@ module.exports = (req, res) => {
     //cookies: req.cookies,
   })
 
-  const values = query; 
+  const values = query.data; 
 
   const dateHours = [{
     valueHourDiurno: 01,
