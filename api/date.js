@@ -28,7 +28,7 @@ const values = []
 
   
 //return res.json(values)
-  res.status(200)
+  //res.status(200)
 })
 
  module.exports = app
