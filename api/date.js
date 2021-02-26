@@ -2,19 +2,22 @@
 //   const date = new Date().toString();
 //   res.status(200).send(date);
 // };
-
+const express = require('express');
+const app = express();
 const cors = require('cors')
 
-module.exports = (req, res) => {
-  res.setHeader('Access-Control-Allow-Credentials', true)
-  res.setHeader('Access-Control-Allow-Origin', '*')
-  // another common pattern
-  // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-  )
+app.use(cors())
+
+app.get("/api/date", (req, res) => {
+  // res.setHeader('Access-Control-Allow-Credentials', true)
+  // res.setHeader('Access-Control-Allow-Origin', '*')
+  // // another common pattern
+  // // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+  // res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+  // res.setHeader(
+  //   'Access-Control-Allow-Headers',
+  //   'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  // )
 
   
 
@@ -26,9 +29,10 @@ module.exports = (req, res) => {
     valueMinNoturno: 05,
     NoturnoResult: 03
   }]
-  res.status(200).send(dateHours);
-};
 
+  res.status(200).send(dateHours);
+})
+ module.exports = app
 
 
 
