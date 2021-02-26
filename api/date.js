@@ -10,29 +10,36 @@ app.use(cors())
 
 app.get("/api/date", (req, res) => {
 
+  res.json({
+    body: req.body,
+    //query: req.query,
+    //cookies: req.cookies,
+  })
 
-  const dateHours = [{
+  const value = body.date
+
+  const dateHours = {
     valueHourDiurno: 12,
     valueMinDiurno: 12,
     DiurnoResult: "Diurno",
     valueHourNoturno: 12,
     valueMinNoturno: 12,
     NoturnoResult: "Noturno"
-  }]
+  }
   console.log("passei pelo GET")
   res.status(200).send(dateHours);
 })
 
 
-app.post("/api/date", (req, res)=>{
+// app.post("/api/date", (req, res)=>{
 
-const values = []
-  values = req.query;
-console.log("passei pelo POST")
+// const values = []
+//   values = req.body;
+// console.log("passei pelo POST")
   
-return res.json(values)
-  //res.status(200).send(values)
-})
+// return res.json(values)
+//   //res.status(200).send(values)
+// })
 
  module.exports = app
 
