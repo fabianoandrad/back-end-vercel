@@ -14,10 +14,10 @@ app.get("/api/date", (req, res) => {
   const dateHours = [{
     valueHourDiurno: 12,
     valueMinDiurno: 12,
-    DiurnoResult: 12,
+    DiurnoResult: "Diurno",
     valueHourNoturno: 12,
     valueMinNoturno: 12,
-    NoturnoResult: 12
+    NoturnoResult: "Noturno"
   }]
   console.log("passei pelo GET")
   res.status(200).send(dateHours);
@@ -27,7 +27,7 @@ app.get("/api/date", (req, res) => {
 app.post("/api/date", (req, res)=>{
 
 const values = []
-  values = req.body;
+  values = req.query;
 console.log("passei pelo POST")
   
 return res.json(values)
