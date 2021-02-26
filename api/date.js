@@ -3,6 +3,8 @@
 //   res.status(200).send(date);
 // };
 
+const cors = require('cors')
+
 module.exports = (req, res) => {
   res.setHeader('Access-Control-Allow-Credentials', true)
   res.setHeader('Access-Control-Allow-Origin', '*')
@@ -15,6 +17,7 @@ module.exports = (req, res) => {
   )
 
   
+
   const dateHours = [{
     valueHourDiurno: 01,
     valueMinDiurno: 02,
