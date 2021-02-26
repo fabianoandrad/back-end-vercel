@@ -3,7 +3,7 @@
 //   res.status(200).send(date);
 // };
 
-const cors = require('cors');
+//const cors = require('cors');
 
 
 module.exports = (req, res) => {
