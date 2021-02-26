@@ -16,7 +16,11 @@ module.exports = (req, res) => {
     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
   )
 
-  
+  res.json({
+    //body: req.body,
+    query: req.query
+    //cookies: req.cookies,
+  })
 
   const dateHours = [{
     valueHourDiurno: 01,
