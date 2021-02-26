@@ -5,13 +5,12 @@
 
 module.exports = (req, res) => {
   res.setHeader("Access-Control-Allow-Credentials", true);
-  res.setHeader("Access-Control-Allow-Origin", "https://create-react-app-theta-beryl.vercel.app");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   
   // another common pattern
   // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
   res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+    "Access-Control-Allow-Methods: POST, GET"
   );
   res.setHeader(
     "Access-Control-Allow-Headers",
