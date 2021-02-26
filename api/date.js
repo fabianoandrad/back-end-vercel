@@ -22,7 +22,7 @@ module.exports = (req, res) => {
     //cookies: req.cookies,
   })
 
-  const values = query.data; 
+ 
 
   values.cors()
 
