@@ -15,7 +15,7 @@ module.exports = (req, res) => {
     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
   )
 
-  const {hourIn, minIn, hourOut, minOut, del} = req.query
+  const {hourIn, minIn, hourOut, minOut, del} = req.body
   
   const dateHours = [{
 
