@@ -7,17 +7,17 @@ app.use(cors());
 let dateHours = []
 
 app.get("/api/date", (req, res) => {
-  dateHour =  [{
-      valueHourDiurno: 12,
-      valueMinDiurno: 12,
-      DiurnoResult: "Diurno",
-      valueHourNoturno: 12,
-      valueMinNoturno: 12,
-      NoturnoResult: "Noturno",
-    }],
+  // dateHour =  [{
+  //     valueHourDiurno: 12,
+  //     valueMinDiurno: 12,
+  //     DiurnoResult: "Diurno",
+  //     valueHourNoturno: 12,
+  //     valueMinNoturno: 12,
+  //     NoturnoResult: "Noturno",
+  //   }],
   
 
-  res.status(200).send(dateHour);
+  res.status(200).send(dateHours);
 });
 
 app.post("/api/date", (req, res) => {
@@ -27,11 +27,11 @@ app.post("/api/date", (req, res) => {
 
 
     const valuesDate = {
-      valueHourDiurno: valuesHours.hourIn,
-      valueMinDiurno: valuesHours.minIn,
+      valueHourDiurno: parseInt(valuesHours.hourIn),
+      valueMinDiurno: parseInt(valuesHours.minIn),
       DiurnoResult: "Diurno ok",
-      valueHourNoturno: valuesHours.hourOut,
-      valueMinNoturno: valuesHours.minOut,
+      valueHourNoturno: parseInt(valuesHours.hourOut),
+      valueMinNoturno: parseInt(valuesHours.minOut),
       NoturnoResult: "Noturno ok",
     };
 
