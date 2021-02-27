@@ -4,31 +4,29 @@ const cors = require("cors");
 
 app.use(cors());
 
+let dateHours = []
+
 app.get("/api/date", (req, res) => {
-  const dateHours = [
-    {
+  dateHour =  [{
       valueHourDiurno: 12,
       valueMinDiurno: 12,
       DiurnoResult: "Diurno",
       valueHourNoturno: 12,
       valueMinNoturno: 12,
       NoturnoResult: "Noturno",
-    },
-  ];
+    }],
+  
 
-  res.status(200).send(dateHours);
+  res.status(200).send(dateHour);
 });
 
 app.post("/api/date", (req, res) => {
 
   try {
-    const valuesHours = {}
-    
-    valuesHours = req.body;
+    const valuesHours = req.body;
 
-    const dateHours = [];
 
-    dateHours = {
+    const valuesDate = {
       valueHourDiurno: valuesHours.hourIn,
       valueMinDiurno: valuesHours.minIn,
       DiurnoResult: "Diurno ok",
@@ -37,7 +35,9 @@ app.post("/api/date", (req, res) => {
       NoturnoResult: "Noturno ok",
     };
 
-    res.status(200).send(dateHours);
+   dateHours.push(valuesDate)
+
+    res.status(200).send(valuesDate);
 
   } catch (error) {
     res.send(error.message);
