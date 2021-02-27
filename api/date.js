@@ -23,7 +23,8 @@ app.get("/api/date", (req, res) => {
 
 app.post("/api/date", (req, res)=>{
 
-const values = []
+  try {
+    const values = []
 const { hourIn, minIn, hourOut, minOut, del } = req.body;
 
 //  const dateHours = [{
@@ -37,6 +38,11 @@ const { hourIn, minIn, hourOut, minOut, del } = req.body;
   
 //return res.json(values)
   res.status(200).send({})
+    
+  } catch (error) {
+    res.status(400).send({error})
+  }
+
 })
 
  module.exports = app
