@@ -37,9 +37,9 @@ app.post("/api/date", (req, res) => {
     res.status(200).send(dateHours);
 
   } catch (error) {
-    res.send(error);
+    res.send("passei aqui");
   }
-  
+
 });
 
 module.exports = app;
