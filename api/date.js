@@ -24,23 +24,23 @@ app.get("/api/date", (req, res) => {
 app.post("/api/date", (req, res)=>{
 
   try {
-    const values = []
-const { hourIn, minIn, hourOut, minOut, del } = req.body;
+   
+const { hourIn, minIn, hourOut, minOut } = req.body;
 
-//  const dateHours = [{
-//   valueHourDiurno: 22,
-//   valueMinDiurno: 33,
-//   DiurnoResult: "Diurno ok",
-//   valueHourNoturno: 44,
-//   valueMinNoturno: 55,
-//   NoturnoResult: "Noturno ok"
-// }]
+ const dateHours = [{
+  valueHourDiurno: hourIn,
+  valueMinDiurno: minIn,
+  DiurnoResult: "Diurno ok",
+  valueHourNoturno: hourOut,
+  valueMinNoturno: minOut,
+  NoturnoResult: "Noturno ok"
+}]
   
-//return res.json(values)
-  res.status(200).send({})
+
+  res.status(200).send(dateHours)
     
   } catch (error) {
-    res.status(400).send({error})
+    res.send(error)
   }
 
 })
