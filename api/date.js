@@ -25,10 +25,10 @@ app.post("/api/date", (req, res) => {
   try {
     const { hourIn, minIn, hourOut, minOut } = req.query;
 
-    let valueHourIn = parseInt(hourIn);
-    let valueMinIn = parseInt(minIn);
-    let valueHourOut = parseInt(hourOut);
-    let valueMinOut = parseInt(minOut);
+    let valueHourIn = hourIn
+    let valueMinIn = minIn
+    let valueHourOut = hourOut
+    let valueMinOut = minOut
   
 
     const valuesDate = {
