@@ -22,16 +22,18 @@ app.get("/api/date", (req, res) => {
 app.post("/api/date", (req, res) => {
 
   try {
+    const valuesHours = {}
     
-    const { hourIn, minIn, hourOut, minOut } = req.body;
+    valuesHours = req.body;
+
     const dateHours = [];
 
     dateHours = {
-      valueHourDiurno: hourIn,
-      valueMinDiurno: minIn,
+      valueHourDiurno: valuesHours.hourIn,
+      valueMinDiurno: valuesHours.minIn,
       DiurnoResult: "Diurno ok",
-      valueHourNoturno: hourOut,
-      valueMinNoturno: minOut,
+      valueHourNoturno: valuesHours.hourOut,
+      valueMinNoturno: valuesHours.minOut,
       NoturnoResult: "Noturno ok",
     };
 
