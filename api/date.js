@@ -22,6 +22,7 @@ app.get("/api/date", (req, res) => {
 app.post("/api/date", (req, res) => {
 
   try {
+    
     const { hourIn, minIn, hourOut, minOut } = req.body;
     const dateHours = [];
 
@@ -37,7 +38,7 @@ app.post("/api/date", (req, res) => {
     res.status(200).send(dateHours);
 
   } catch (error) {
-    res.send("passei aqui");
+    res.send(error.message);
   }
 
 });
