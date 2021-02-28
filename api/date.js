@@ -32,19 +32,21 @@ app.post("/api/date", (req, res) => {
 
     const { hourIn, minIn, hourOut, minOut } = req.body;
 
-    let valueHourIn = hourIn
-    let valueMinIn = minIn
-    let valueHourOut = hourOut
-    let valueMinOut = minOut
+    let valueHourDiurno = hourIn
+    let valueMinDiurno = minIn
+    let valueHourNoturno = hourOut
+    let valueMinNoturno = minOut
+    let DiurnoResult = "Diurno"
+    let NoturnoResult = "Noturno"
   
 
     const valuesDate = {
-      valueHourIn,
-      valueMinIn,
-      DiurnoResult: "Diurno ok",
-      valueHourOut,
-      valueMinOut,
-      NoturnoResult: "Noturno ok",
+      valueHourDiurno,
+      valueMinDiurno,
+      DiurnoResult,
+      valueHourNoturno,
+      valueMinNoturno,
+      NoturnoResult,
     };
 
    dateHours.push(valuesDate)
