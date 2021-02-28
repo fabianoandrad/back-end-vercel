@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
-app.use(cors());
+app.use(cors("https://create-react-app-theta-beryl.vercel.app"));
 
 let dateHours = []
 
