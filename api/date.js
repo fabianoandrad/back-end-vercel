@@ -24,7 +24,7 @@ app.post("/api/date", (req, res) => {
 
   try {
 
-    const valuesDate = req.query.values
+    const valuesDate = req.body
   //   const { hourIn, minIn, hourOut, minOut } = req.body;
 
   //   let valueHourIn = hourIn
