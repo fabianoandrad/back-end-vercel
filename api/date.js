@@ -28,25 +28,26 @@ app.post("/api/date", (req, res) => {
 
   try {
 
-    const valuesDate = req.body
-  //   const { hourIn, minIn, hourOut, minOut } = req.body;
+    //const valuesDate = req.body
 
-  //   let valueHourIn = hourIn
-  //   let valueMinIn = minIn
-  //   let valueHourOut = hourOut
-  //   let valueMinOut = minOut
+    const { hourIn, minIn, hourOut, minOut } = req.body;
+
+    let valueHourIn = hourIn
+    let valueMinIn = minIn
+    let valueHourOut = hourOut
+    let valueMinOut = minOut
   
 
-  //   const valuesDate = {
-  //     valueHourIn,
-  //     valueMinIn,
-  //     DiurnoResult: "Diurno ok",
-  //     valueHourOut,
-  //     valueMinOut,
-  //     NoturnoResult: "Noturno ok",
-  //   };
+    const valuesDate = {
+      valueHourIn,
+      valueMinIn,
+      DiurnoResult: "Diurno ok",
+      valueHourOut,
+      valueMinOut,
+      NoturnoResult: "Noturno ok",
+    };
 
-  //  dateHours.push(valuesDate)
+   dateHours.push(valuesDate)
 
     res.status(200).send(valuesDate);
 
