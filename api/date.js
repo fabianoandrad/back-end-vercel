@@ -197,11 +197,7 @@ app.delete("/api/date", (req, res) => {
   try {
 
       dateHours = [];
-
-      const del = {del: true}
-
-   return res.json(del)
-    
+  
   } catch (error) {
     res.send(error.message);
   }
