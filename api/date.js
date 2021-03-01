@@ -192,7 +192,7 @@ app.post("/api/date", (req, res) => {
 
 });
 
-app.delete("api/date", (req, res) => {
+app.delete("/api/date", (req, res) => {
 
   try {
 
