@@ -11,13 +11,13 @@ app.use(cors());
 
 let dateHours = []
 
-app.get("/api/date", (req, res) => {
+app.get("api/date", (req, res) => {
 
   res.status(200).send(dateHours);
 
 });
 
-app.post("/api/date", (req, res) => {
+app.post("api/date", (req, res) => {
 
   try {
 
@@ -192,7 +192,7 @@ app.post("/api/date", (req, res) => {
 
 });
 
-app.delete("/api/date", (req, res) => {
+app.delete("api/date", (req, res) => {
 
   try {
 
