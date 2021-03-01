@@ -174,6 +174,8 @@ app.post("/api/date", (req, res) => {
 
     if (valueMinDiurno < 10) valueMinDiurno = "0" + valueMinDiurno
 
+    if (valueMinNoturno < 10) valueMinNoturno = "0" + valueMinNoturno
+
       const valueHourMin = {
         id: uuid(),
         valueHourDiurno,
