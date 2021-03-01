@@ -200,7 +200,7 @@ app.delete("/api/date", (req, res) => {
 
       const del = {del: true}
 
-    res.status(200).send(del)
+   return res.json(del)
     
   } catch (error) {
     res.send(error.message);
