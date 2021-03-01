@@ -166,7 +166,7 @@ app.post("/api/date", (req, res) => {
             valueHourDiurno += 1;
           }
           NoturnoResult = "de horas noturnas";
-          DiurnoResult = "de horas diurnas";
+          DiurnoResult = " de horas diurnas";
 
         }
       }
