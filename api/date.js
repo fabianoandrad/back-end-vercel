@@ -198,7 +198,7 @@ app.delete("/api/date", (req, res) => {
 
       dateHours = [];
 
-    res.status(200).send("Delete ok")
+    res.status(200).send("Deletado com sucesso")
     
   } catch (error) {
     res.send(error.message);
