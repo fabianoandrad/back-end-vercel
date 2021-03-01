@@ -14,7 +14,7 @@ let dateHours = []
 app.get("/api/date", (req, res) => {
 
   res.status(200).send(dateHours);
-  
+
 });
 
 app.post("/api/date", (req, res) => {
@@ -36,7 +36,7 @@ app.post("/api/date", (req, res) => {
     let NoturnoResult = "Não fez horas noturnas!";
     let totalHours = 0;
     let totalMin = 0;
-  
+
     // se entrada for diurna
     if (valueHourIn >= 5 && valueHourIn < 22) {
       //executa se saida é menor que 22hs
@@ -45,7 +45,7 @@ app.post("/api/date", (req, res) => {
         if (valueMinOut < valueMinIn) {
           valueMinOut += 60;
           valueHourOut -= 1;
-  
+
           valueMinDiurno = valueMinOut - valueMinIn;
           valueHourDiurno = valueHourOut - valueHourIn;
           DiurnoResult = "de horas diurnas";
@@ -54,7 +54,7 @@ app.post("/api/date", (req, res) => {
           valueHourDiurno = valueHourOut - valueHourIn;
           DiurnoResult = "de horas diurnas";
         }
-  
+
         //executa se saida é maior ou igual a 22hs
       } else {
         //resultado para hora diurna até as 22hrs
@@ -65,12 +65,12 @@ app.post("/api/date", (req, res) => {
         } else {
           valueMinIn -= 60;
           valueHourIn += 1;
-  
+
           valueMinDiurno = 00 - valueMinIn;
           valueHourDiurno = 22 - valueHourIn;
           DiurnoResult = "de horas diurnas";
         }
-  
+
         //executa quando hora de saida for entre 22hrs e 24hrs
         if (valueHourOut >= 22 && valueHourOut < 24) {
           //resultado para hora noturna
@@ -87,16 +87,16 @@ app.post("/api/date", (req, res) => {
           } else {
             // calcular horas após as 5hs
             valueHourOut -= 5;
-  
+
             valueMinDiurno += valueMinOut;
             valueHourDiurno += valueHourOut;
-  
+
             if (valueMinDiurno >= 60) {
               valueMinDiurno -= 60;
               valueHourDiurno += 1;
-  
+
             }
-  
+
             valueMinNoturno = 00;
             valueHourNoturno = 07;
             NoturnoResult = "de horas noturnas";
@@ -104,14 +104,14 @@ app.post("/api/date", (req, res) => {
         }
       }
     }
-  
+
     // ***************************** Se entrada for noturna *****************************
     if (valueHourIn >= 22 || valueHourIn < 5) {
       if (valueHourOut >= 22 && valueHourOut <= 24) {
         if (valueMinIn > valueMinOut) {
           valueMinOut += 60;
           valueHourOut -= 1;
-  
+
           valueMinNoturno = valueMinOut - valueMinIn;
           valueHourNoturno = valueHourOut - valueHourIn;
           NoturnoResult = "de horas noturnas";
@@ -123,55 +123,55 @@ app.post("/api/date", (req, res) => {
         }
       } else {
         //*********************Teste *****************
-  
+
         if (valueHourOut == 24) valueHourOut = 00;
-  
+
         if (valueMinIn == 0) {
           valueMinNoturno = 00 - valueMinIn;
           valueHourNoturno = 24 - valueHourIn;
         } else {
           valueMinIn -= 60;
           valueHourIn += 1;
-  
+
           valueMinNoturno = 00 - valueMinIn;
           valueHourNoturno = 24 - valueHourIn;
         }
-  
+
         // se caso entrada for entre 22hrs 00 e saida entre 00hr e 5hrs  
-        if (valueHourIn >= 22 && valueHourOut > 00  && valueHourOut <= 5) {
-  
-  
+        if (valueHourIn >= 22 && valueHourOut > 00 && valueHourOut <= 5) {
+
+
           // somando horas entre 22hrs 00 e saida entre 00hr e 5hrs
           valueMinNoturno += valueMinOut
           valueHourNoturno += valueHourOut
-  
-          if(valueMinNoturno >= 60){
+
+          if (valueMinNoturno >= 60) {
             valueMinNoturno -= 60
             valueHourNoturno += 1
           }
           NoturnoResult = "de horas noturnas";
-  
-  
+
+
         } else {
           // calcular horas após as 5hs
           valueHourNoturno += 5
-  
+
           valueHourOut -= 5;
-  
+
           valueMinDiurno += valueMinOut;
           valueHourDiurno += valueHourOut;
-  
+
           if (valueMinDiurno >= 60) {
             valueMinDiurno -= 60;
             valueHourDiurno += 1;
           }
           NoturnoResult = "de horas noturnas";
           DiurnoResult = "de horas diurnas";
-  
+
         }
       }
     }
-  
+
     const valueHourMin = {
       id: uuid(),
       valueHourDiurno,
@@ -181,20 +181,32 @@ app.post("/api/date", (req, res) => {
       valueMinNoturno,
       NoturnoResult,
     };
-  
+
     dateHours.push(valueHourMin);
-  
-    if(del === true) {
-    
-      dateHours = [];
-     }
-  
+
     return res.json(valueHourMin);
 
   } catch (error) {
     res.send(error.message);
-  }
+  }  
 
 });
+
+app.delete("api/date", (req, res) => {
+
+  try {
+
+    const { del }= req.body
+
+    if (del === true) {
+  
+      dateHours = [];
+    }
+    
+  } catch (error) {
+    res.send(error.message);
+  }
+
+})
 
 module.exports = app;
