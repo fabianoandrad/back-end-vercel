@@ -172,7 +172,7 @@ app.post("/api/date", (req, res) => {
       }
     }
   
-    const project = {
+    const valueHourMin = {
       id: uuid(),
       valueHourDiurno,
       valueMinDiurno,
@@ -182,14 +182,14 @@ app.post("/api/date", (req, res) => {
       NoturnoResult,
     };
   
-    projects.push(project);
+    dateHours.push(valueHourMin);
   
     if(del === true) {
     
-      projects = [];
+      dateHours = [];
      }
   
-    return res.json(project);
+    return res.json(valueHourMin);
 
   } catch (error) {
     res.send(error.message);
