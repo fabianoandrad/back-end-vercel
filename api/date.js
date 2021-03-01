@@ -197,8 +197,10 @@ app.delete("/api/date", (req, res) => {
   try {
 
       dateHours = [];
-      
-    res.status(200).send("Horas zeradas com sucesso!")
+
+      const del = true
+
+    res.status(200).send(del)
     
   } catch (error) {
     res.send(error.message);
