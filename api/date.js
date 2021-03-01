@@ -172,7 +172,8 @@ app.post("/api/date", (req, res) => {
       }
     }
 
-    valueHourDiurno = valueHourDiurno.toFixed(2)
+    //valueHourDiurno = valueHourDiurno.toFixed(1)
+    valueMinDiurno = valueMinDiurno.toFixed(1)
 
     const valueHourMin = {
       id: uuid(),
