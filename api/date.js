@@ -196,12 +196,12 @@ app.delete("api/date", (req, res) => {
 
   try {
 
-    const { del }= req.body
+   
 
-    if (del === true) {
+    
   
       dateHours = [];
-    }
+    
     
   } catch (error) {
     res.send(error.message);
