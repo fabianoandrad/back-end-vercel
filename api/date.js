@@ -172,18 +172,17 @@ app.post("/api/date", (req, res) => {
       }
     }
 
-    //valueHourDiurno = valueHourDiurno.toFixed(1)
-    valueMinDiurno = valueMinDiurno.toFixed(1)
+    if (valueMinDiurno < 10) valueMinDiurno = "0" + valueMinDiurno
 
-    const valueHourMin = {
-      id: uuid(),
-      valueHourDiurno,
-      valueMinDiurno,
-      DiurnoResult,
-      valueHourNoturno,
-      valueMinNoturno,
-      NoturnoResult,
-    };
+      const valueHourMin = {
+        id: uuid(),
+        valueHourDiurno,
+        valueMinDiurno,
+        DiurnoResult,
+        valueHourNoturno,
+        valueMinNoturno,
+        NoturnoResult,
+      };
 
     dateHours.push(valueHourMin);
 
@@ -191,7 +190,7 @@ app.post("/api/date", (req, res) => {
 
   } catch (error) {
     res.send(error.message);
-  }  
+  }
 
 });
 
@@ -199,10 +198,10 @@ app.delete("/api/date", (req, res) => {
 
   try {
 
-      dateHours = [];
+    dateHours = [];
 
     res.status(200).send("Deletado com sucesso")
-    
+
   } catch (error) {
     res.send(error.message);
   }
